@@ -16,7 +16,7 @@ and e.nome not in ('São Paulo', 'Minas Gerais', 'Paraíba');
 -- com a letra M.;
 select c.*
 from cidade c
-where c.nome like 'M%';
+where c.nome like 'C%';
 
 -- Conte quantas cidades que ficam na região Centro-Oeste tem mais do que 400 mil habitantes.
 select count(*)
@@ -63,6 +63,6 @@ and c.total_habitantes > 100000;
 select round(avg(C.renda_per_capita),2)
 from cidade c, estado e
 where c.estado = e.sigla 
-and e.região not in('Centro-Oeste')
+
 and c.data_fundação > 1500-04-01
 and c.nome like 's%';

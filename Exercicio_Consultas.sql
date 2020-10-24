@@ -32,7 +32,7 @@ where c.capital = 1
 and c.renda_per_capita > 1200.00;
 
 -- Selecione o nome da cidade e o nome do estado cuja sigla é sp.;
-select c.nome, c.estado
+select c.nome, e.nome
 from cidade c, estado e
 where c.estado = e.sigla
 and e.sigla = 'SP';
@@ -41,6 +41,7 @@ and e.sigla = 'SP';
 -- cidades com renda per capita maior do que 20000 e que não são capitais.;
 select e.região, e.nome, c.nome, c.total_habitantes
 from cidade c, estado e
+where c.estado = e.sigla
 where c.estado = e.sigla
 and c.renda_per_capita > 1000
 and c.capital = 0;
